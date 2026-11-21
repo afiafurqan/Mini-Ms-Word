@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini MS Word</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <main class="app">
+    <h1>Mini MS Word <span class="heart" aria-hidden="true">&#10084;&#65039;</span></h1>
+
+    <div class="toolbar" role="toolbar" aria-label="Text formatting">
+
+      <select id="fontSize" class="tool select-size" aria-label="Font size">
+        <option value="12">12</option>
+        <option value="14">14</option>
+        <option value="16">16</option>
+        <option value="18">18</option>
+        <option value="20" selected>20</option>
+        <option value="24">24</option>
+        <option value="28">28</option>
+        <option value="32">32</option>
+        <option value="40">40</option>
+      </select>
+
+      <button type="button" class="tool" id="boldBtn" aria-label="Bold"><b>B</b></button>
+      <button type="button" class="tool" id="underlineBtn" aria-label="Underline"><u>U</u></button>
+      <button type="button" class="tool" id="italicBtn" aria-label="Italic"><i>I</i></button>
+      <button type="button" class="tool clear-btn" id="clearBtn">Clear</button>
+
+      <input type="color" id="textColor" class="color-input" value="#000000" aria-label="Text color" title="Text color">
+
+      <select id="fontFamily" class="tool select-font" aria-label="Font family">
+        <option value="Arial" selected>Arial</option>
+        <option value="Verdana">Verdana</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
+        <option value="Courier New">Courier New</option>
+        <option value="Comic Sans MS">Comic Sans MS</option>
+      </select>
+
+      <label class="fill-wrap" title="Highlight color">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+          <path d="M5 11l6-7 7 7-6 6z" fill="#000"/>
+          <path d="M20 14c1.2 1.6 2 2.7 2 3.7a2 2 0 0 1-4 0c0-1 .8-2.100 2-3.700z" fill="#000"/>
+        </svg>
+        <span class="fill-bar" id="fillBar"></span>
+        <input type="color" id="bgColor" value="#ffff00" aria-label="Highlight color">
+      </label>
+
+      <div class="align-group" role="group" aria-label="Alignment">
+        <button type="button" class="tool icon-btn" data-align="justifyLeft" aria-label="Align left">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 5h18M3 9h12M3 13h18M3 17h12" stroke="#000" stroke-width="2"/></svg>
+        </button>
+        <button type="button" class="tool icon-btn" data-align="justifyCenter" aria-label="Align center">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 5h18M6 9h12M3 13h18M6 17h12" stroke="#000" stroke-width="2"/></svg>
+        </button>
+        <button type="button" class="tool icon-btn" data-align="justifyRight" aria-label="Align right">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 5h18M9 9h12M3 13h18M9 17h12" stroke="#000" stroke-width="2"/></svg>
+        </button>
+        <button type="button" class="tool icon-btn" data-align="justifyFull" aria-label="Justify">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M3 5h18M3 9h18M3 13h18M3 17h18" stroke="#000" stroke-width="2"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div id="editor" class="editor" contenteditable="true" spellcheck="true" role="textbox" aria-multiline="true" aria-label="Document editor"></div>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
